@@ -1,0 +1,100 @@
+<mat-toolbar class="navbar">
+  <a
+    routerLink="/"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <!-- <img
+      class="container"
+      style="padding-bottom: 60px; bottom: 20px; height: 110px; width: 100px"
+      src="../../../assets/logo.png"
+      alt=""
+    /> -->
+    <img
+      height="110px"
+      width="300px"
+      style="padding-bottom: 50px"
+      src="../../../assets/examhertz.jpg"
+      alt=""
+    />
+    <!-- <span style="height: 100%; width: max-content; font-size: 40px;">EXAM HERTZ</span> -->
+  </a>
+
+  <!-- <div style="margin-left: 450px;">
+    <form class="example" action="action_page.php">
+      <input type="text" placeholder="search exam..." name="search">
+      <button type="submit"><span class="material-icons">
+        search
+        </span></button>
+    </form>
+   </div> -->
+
+  <span class="example-spacer"></span>
+
+  <div style="margin-right: 50px">
+    <a
+      id="black"
+      *ngIf="!isLoggedIn"
+      [routerLink]="'/login'"
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      Login
+    </a>
+  </div>
+
+  <!-- <div>
+  <span style="margin-right: 30px;" class="nav-line-2 ">Account &amp; Lists
+    <span class="material-icons">
+      arrow_drop_down
+      </span>
+  </span>
+ </div> -->
+
+  <!-- <span>Account &amp; Lists </span>
+    <span style="margin-right: 40px;" class="material-icons">
+      arrow_drop_down
+       </span> -->
+
+  <!-- <div>
+  
+  <span style="margin-right: 2px;" class="material-icons">
+    shopping_cart
+    </span><span>Cart</span>
+</div> -->
+
+  <a
+    id="black1"
+    *ngIf="!isLoggedIn"
+    mat-icon-button
+    [routerLink]="'/signup'"
+    class="example-icon favorite-icon ml20 mr20"
+    aria-label="Example icon-button with heart icon"
+  >
+    Register
+  </a>
+  <button
+    id="black2"
+    *ngIf="login.isLoggedIn && user"
+    mat-icon-button
+    class="example-icon favorite-icon ml20"
+    style="margin-right: 120px"
+    routerLink="/user-dashboard/0"
+    aria-label="Example icon-button with heart icon"
+  >
+    {{ login.getUser().username }}
+  </button>
+  <!-- routerLink="/admin/profile" -->
+  <a
+    id="black3"
+    (click)="logout()"
+    *ngIf="isLoggedIn"
+    mat-icon-button
+    class="example-icon favorite-icon ml20 mr20"
+    aria-label="Example icon-button with heart icon"
+  >
+    Logout
+  </a>
+</mat-toolbar>
